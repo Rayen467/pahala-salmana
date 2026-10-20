@@ -1,0 +1,18 @@
+{
+  "name": "pahala-salmana",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "@fontsource/barlow-condensed": "^5.2.8",
+    "@fontsource/manrope": "^5.2.8"
+  },
+  "devDependencies": {
+    "vite": "^6.4.1"
+  }
+}
