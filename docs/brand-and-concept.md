@@ -36,7 +36,7 @@ Dokumen mengusulkan navy, merah dan putih, sedangkan logo yang diberikan memakai
 - Bahasa: Indonesia, dengan copy yang profesional dan mudah dipahami.
 - Arah visual: editorial industri, navy–cyan–putih, tipografi tegas, ruang lega dan ilustrasi pengiriman.
 - Layanan diperkenalkan sebagai kebutuhan yang dapat dikonsultasikan: cargo darat, sewa truk dan logistik bisnis. Ketersediaan rute dan layanan perlu dikonfirmasi.
-- Alur utama: rencanakan rute → lengkapi kebutuhan → tinjau ringkasan → salin/unduh atau lanjutkan ke WhatsApp resmi setelah nomor dikonfigurasi.
+- Alur utama: rencanakan rute → lengkapi kebutuhan → tinjau ringkasan → lanjutkan melalui aplikasi email, salin/unduh, atau WhatsApp setelah nomor dikonfigurasi.
 - Ilustrasi visual tidak boleh disebut dokumentasi armada perusahaan.
 - Tidak menampilkan statistik, testimoni, mitra, alamat, legalitas, kapasitas armada, tarif atau wilayah yang belum terverifikasi.
 - Tidak membuat tracking resi atau status pengiriman fiktif. Sistem pelacakan memerlukan integrasi data operasional nyata pada fase berikutnya.
@@ -44,4 +44,8 @@ Dokumen mengusulkan navy, merah dan putih, sedangkan logo yang diberikan memakai
 
 ## Data yang masih perlu dilengkapi
 
-Nomor WhatsApp bisnis, alamat, email, jam operasional, layanan yang sudah aktif, rute yang tersedia, kepemilikan/kemitraan armada, ketentuan pengiriman, foto operasional asli dan informasi legalitas yang boleh dipublikasikan. Data tersebut tidak diasumsikan dari gambar logo atau contoh di dokumen konsep.
+Nomor WhatsApp bisnis, alamat, jam operasional, layanan yang sudah aktif, rute yang tersedia, kepemilikan/kemitraan armada, ketentuan pengiriman, foto operasional asli dan informasi legalitas yang boleh dipublikasikan. Data tersebut tidak diasumsikan dari gambar logo atau contoh di dokumen konsep.
+
+## Kontak yang diberikan pemilik
+
+Pada tindak lanjut, pemilik memberikan TikTok `pahala.salma.expe`, Instagram `pahalasalmaexpedition`, serta email `pahalasalmaexpedition@gmail.com` untuk ditampilkan dan ditautkan di website. Tautan sosial mengarah ke profil yang sesuai dengan username tersebut; tautan email membuka aplikasi email. Belum ada URL Google Business Profile atau Google Maps yang diberikan.

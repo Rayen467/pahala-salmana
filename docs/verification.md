@@ -27,3 +27,12 @@ Tanggal: 20 Oktober 2026. Lingkungan: Windows, Node.js 22.13.0, npm 11.5.2, Chro
 Pengujian ini memverifikasi website statis dan interaksi di browser. Website belum terhubung ke sistem pesanan, tracking atau tarif operasional. Nomor WhatsApp resmi masih kosong; status ringkasan selalu dibedakan dari permintaan yang sudah dikirim.
 
 Review visual dilakukan secara independen oleh agen evaluator. Pengujian browser menggunakan Chromium; belum dilakukan uji perangkat fisik Safari/iOS.
+
+## Pembaruan kontak bisnis
+
+- Tautan TikTok, Instagram dan email dibandingkan dengan akun yang diberikan pemilik, pada bagian kontak serta footer.
+- Tautan sosial memakai HTTPS, membuka target baru dan menyertakan `noopener noreferrer`.
+- Tata letak kontak diperiksa pada lebar 360, 390, 768 dan 1440 piksel, tanpa luapan horizontal dan dengan target sentuh minimal 44 piksel.
+- Penerima, subjek dan isi `mailto:` pada ringkasan diperiksa, termasuk karakter `&`, `#` dan baris baru. Tidak ada pesan yang dikirim selama pengujian.
+- Tautan kontak tetap terlihat dan berfungsi sebagai anchor HTML ketika JavaScript dimatikan.
+- Build berhasil dan tidak ada error JavaScript pada alur kontak/ringkasan. Pembukaan aplikasi native di perangkat fisik belum diuji; aplikasi yang terbuka mengikuti pengaturan perangkat.

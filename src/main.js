@@ -45,10 +45,19 @@ for (const selector of ['#quick-service', '#service']) {
 document.querySelectorAll('[data-route-note]').forEach((element) => { element.textContent = siteConfig.routeNote; });
 const whatsappNumber = siteConfig.whatsappNumber.replace(/\D/g, '');
 const hasBusinessContact = /^[1-9]\d{7,14}$/.test(whatsappNumber);
+const businessEmail = siteConfig.contacts.email;
+document.querySelectorAll('[data-contact]').forEach((link) => {
+  const platform = link.dataset.contact;
+  const contact = siteConfig.contacts[platform];
+  if (!contact) return;
+  link.href = platform === 'email' ? `mailto:${businessEmail}` : contact.url;
+  const handle = link.querySelector('.contact-handle');
+  if (handle) handle.textContent = platform === 'email' ? businessEmail : `@${contact.username}`;
+});
 const contactNotice = $('[data-contact-notice]');
 contactNotice.textContent = hasBusinessContact
-  ? 'Siapkan ringkasan, lalu lanjutkan konsultasi melalui WhatsApp resmi kami.'
-  : siteConfig.contactPendingMessage;
+  ? 'Siapkan ringkasan, lalu lanjutkan konsultasi melalui email bisnis atau WhatsApp resmi kami.'
+  : siteConfig.contactMessage;
 $('#copyright-year').textContent = new Date().getFullYear();
 
 function getLocalDate() {
@@ -158,14 +167,17 @@ quoteForm.addEventListener('submit', (event) => {
   $('#copy-status').textContent = '';
   $('#fallback-label').hidden = true;
   $('#copy-summary').textContent = 'Salin ringkasan ⧉';
+  const emailSubject = `Konsultasi pengiriman ${data.origin} ke ${data.destination}`;
+  const emailBody = `Halo ${siteConfig.brand},\n\nSaya ingin berkonsultasi mengenai kebutuhan pengiriman berikut.\n\n${preparedSummary}\n\nMohon informasi layanan, rute, jadwal, dan penawarannya. Terima kasih.`;
+  $('#email-summary-link').href = `mailto:${businessEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
   if (hasBusinessContact) {
     $('#whatsapp-link').href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`Halo ${siteConfig.brand}, saya ingin berkonsultasi tentang pengiriman berikut.\n\n${preparedSummary}`)}`;
     $('#whatsapp-link').hidden = false;
     resultTitle.textContent = 'Ringkasan siap dikonsultasikan';
-    $('#result-description').textContent = 'Periksa detail Anda, lalu lanjutkan ke WhatsApp untuk berkonsultasi. Permintaan belum dikirim sampai Anda mengirim pesan di WhatsApp.';
+    $('#result-description').textContent = 'Periksa detail Anda, lalu lanjutkan melalui email atau WhatsApp untuk berkonsultasi. Kirim pesannya dari aplikasi pilihan Anda; ringkasan ini belum dikirim kepada tim.';
   } else {
-    resultTitle.textContent = 'Ringkasan siap disalin';
-    $('#result-description').textContent = `${siteConfig.contactPendingMessage} Ringkasan ini belum dikirim kepada tim.`;
+    resultTitle.textContent = 'Ringkasan siap dikonsultasikan';
+    $('#result-description').textContent = 'Periksa detail Anda, lalu pilih “Lanjutkan via email”. Kirim pesannya dari aplikasi email Anda; ringkasan ini belum dikirim kepada tim. Anda juga dapat menyalin atau mengunduh ringkasan.';
   }
   quoteForm.hidden = true;
   quoteResult.hidden = false;

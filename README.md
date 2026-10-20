@@ -28,6 +28,7 @@ Hasil produksi berada di `dist/` dan dapat diunggah ke layanan hosting statis. P
 - Formulir perencanaan rute yang meneruskan asal, tujuan dan layanan ke permintaan penawaran.
 - Validasi data kontak, detail barang dan jadwal pengiriman.
 - Ringkasan kebutuhan yang dapat ditinjau, disalin dan diunduh sebagai teks.
+- Tautan TikTok, Instagram dan email bisnis, serta ringkasan penawaran yang dapat dibuka di aplikasi email.
 - Dukungan tautan WhatsApp setelah nomor bisnis resmi dikonfigurasi.
 - Navigasi seluler, label formulir, fokus keyboard dan dukungan pengurangan animasi.
 
@@ -35,7 +36,7 @@ Hasil produksi berada di `dist/` dan dapat diunggah ke layanan hosting statis. P
 
 Dokumen sumber masih berupa konsep awal. Website tidak mengarang harga, alamat, jangkauan, jumlah armada, portofolio, testimoni atau pengalaman perusahaan. Pengunjung diminta mengonfirmasi ketersediaan layanan dan rute.
 
-Tanpa kontak resmi, formulir hanya menyiapkan ringkasan di perangkat pengunjung. Ringkasan **belum terkirim** ke tim. Menyalin atau mengunduh ringkasan tidak membuat pesanan. Tidak ada penyimpanan data pribadi di server atau penyimpanan browser.
+Formulir menyiapkan ringkasan di perangkat pengunjung. Tombol email membuka aplikasi email dengan penerima, subjek dan isi yang telah disiapkan; pengunjung harus menekan kirim di aplikasi email. Ringkasan **belum terkirim** hanya dengan mengisi formulir. Menyalin atau mengunduh ringkasan tidak membuat pesanan. Tidak ada penyimpanan data pribadi di server atau penyimpanan browser.
 
 Ketika WhatsApp diaktifkan, tautan hanya membuka pesan yang sudah disiapkan; pengunjung tetap perlu mengirimkannya sendiri di WhatsApp. Tidak ada jaminan pesan telah diterima.
 
@@ -43,9 +44,19 @@ Pelacakan resi, tarif otomatis, dashboard admin, database pesanan dan integrasi 
 
 ## Konfigurasi kontak dan layanan
 
-Edit `src/config.js` untuk mengisi `whatsappNumber` dengan nomor bisnis yang telah dikonfirmasi pemilik. Gunakan kode negara dan digit saja, misalnya awalan `62` untuk Indonesia, tanpa tanda `+`, spasi atau tanda hubung. Jangan mengisi nomor contoh sebagai kontak publik. Nilai kosong mempertahankan alur salin/unduh.
+Kontak berikut diberikan langsung oleh pemilik:
 
-Daftar `services`, pesan `routeNote` dan pesan kontak sementara juga berada dalam file tersebut. Jika lingkup layanan berubah, sesuaikan deskripsi layanan di `index.html` agar selaras. Setelah mengubah konfigurasi, jalankan kembali `npm run build` dan unggah hasil build terbaru.
+- TikTok: [@pahala.salma.expe](https://www.tiktok.com/@pahala.salma.expe).
+- Instagram: [@pahalasalmaexpedition](https://www.instagram.com/pahalasalmaexpedition/).
+- Email bisnis: [pahalasalmaexpedition@gmail.com](mailto:pahalasalmaexpedition@gmail.com).
+
+Tautan profil menggunakan HTTPS agar dapat diarahkan oleh perangkat ke aplikasi terpasang atau dibuka di browser. Email menggunakan `mailto:` untuk membuka aplikasi email pilihan pengguna. Alamat Gmail tidak diasumsikan sebagai URL Google Business Profile atau Google Maps. Pembukaan aplikasi native bergantung pada pengaturan perangkat, browser dan aplikasi yang terpasang.
+
+Nilai kontak dikelola di `src/config.js`; tautan HTML di `index.html` juga tersedia saat JavaScript dimatikan. Jika akun berubah, perbarui keduanya agar fallback tetap sesuai.
+
+Edit `src/config.js` untuk mengisi `whatsappNumber` dengan nomor bisnis yang telah dikonfirmasi pemilik. Gunakan kode negara dan digit saja, misalnya awalan `62` untuk Indonesia, tanpa tanda `+`, spasi atau tanda hubung. Jangan mengisi nomor contoh sebagai kontak publik. Nilai kosong mempertahankan alur email dan salin/unduh.
+
+Daftar `services`, pesan `routeNote` dan `contactMessage` juga berada dalam file tersebut. Jika lingkup layanan berubah, sesuaikan deskripsi layanan di `index.html` agar selaras. Setelah mengubah konfigurasi, jalankan kembali `npm run build` dan unggah hasil build terbaru.
 
 File konfigurasi ini tersedia di browser. Jangan memasukkan token, password atau rahasia ke dalamnya.
 
